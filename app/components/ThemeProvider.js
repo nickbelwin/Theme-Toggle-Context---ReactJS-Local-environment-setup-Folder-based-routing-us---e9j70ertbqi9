@@ -1,13 +1,14 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 
 const ThemeContext = React.createContext()
 const ThemeProvider = (props) =>{
-
+    
+    const [isDark, setIsDark]=useState("light");
     return (
-        <React.Fragment>
-
-        </React.Fragment>
+            <ThemeContext.Provider value={{isDark, setIsDark}} >
+                {props.children}
+            </ThemeContext.Provider>
     )
 }
 
